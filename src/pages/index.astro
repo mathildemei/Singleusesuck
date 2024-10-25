@@ -1,20 +1,24 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
+import Button2 from "../components/Button_green.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 ---
 
 <MainLayout title="#SingleUseSucks">
-  <article class="font-primary">
-    <h1>Index overskrift</h1>
-    <Button>Klik!</Button>
-    <p>
-      Link til <Link href="https://www.kea.dk" target="_blank"
-        >En anden side</Link
-      >
-    </p>
-    <Image src={thumbsup} alt="" />
+  <article class="font-primary place-content-center">
+    <h1 class="text-plastic-red text-h1-d font-primary place-content-center">
+      Dyk ned og opdag, hvorfor engangsplastik har alvorlige konsekvenser, både
+      for dig og for naturen
+    </h1>
+    <h3 class="text-h3-d font-secondary text-plastic-red">#SingleUseSucks</h3>
+    <div class="text-body-b font-secondary">
+      <Button2 class="flex items-center">
+        <div class="flex pr-8 pl-6 py-3 font-body-b">
+          <p class="pl-2">Start her</p>
+        </div>
+      </Button2>
+    </div>
   </article>
 </MainLayout>
