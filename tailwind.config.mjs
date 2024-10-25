@@ -14,10 +14,11 @@ export default {
               },
               fontSize: {
                 // Desktop størrelser
-                "h1-d": "120px",
-                "h2-d": "44px",
-                "h3-d": "34px",
-                "h4-d": "28px",
+                "h1-d": "80px",
+                "h2-d": "56px",
+                "h3-d": "36px",
+                "body-b": "24px",
+                "body-s": "18px",
     
               },
               colors: {
