@@ -35,50 +35,64 @@ import gulfisk from "../assets/images/gulfisk.webp";
       <em> Vi har ikke en fremtid uden dem.</em>
     </h2>
   </div>
-  <!-- Whale Shark -->
+
   <div class="">
-    <Image src={hvalhaj} alt="Hvalhaj" class="absolute top-0 left-16 w-1/2" />
     <!-- Dolphin -->
-    <Image src={delfin} class="absolute top-8 right-32 w-1/5" alt="Dolphin" />
+    <Image
+      src={delfin}
+      class="delfin absolute top-8 w-1/5 animate-slide-right1 delay-[7000ms] dolphin-animation"
+      alt="Dolphin"
+    />
+    <!-- Whale Shark -->
+    <Image
+      src={hvalhaj}
+      alt="Hvalhaj"
+      class="absolute top-0 left-16 w-1/2 animate-slide-in1 delay-[8000ms] jellyfish-animation"
+    />
+
     <!-- Yellow fishes -->
     <Image
       src={gulfisk}
-      class="gulfisk absolute top-40 w-1/8"
+      class="gulfisk absolute top-40 w-1/8 animate-slide-in2 delay-[9000ms]"
       alt="Gule fisk"
     />
     <!-- Seahorse -->
-    <Image src={søhest} class="absolute top-1/4 left-4 w-1/12" alt="Seahorse" />
+    <Image
+      src={søhest}
+      class="absolute top-1/4 left-4 w-1/12 animate-slide-left1 delay-[7000ms]"
+      alt="Seahorse"
+    />
     <!-- Jellyfish -->
     <Image
       src={vandmand}
-      class="absolute top-1/4 right-0 w-1/8"
+      class="absolute top-1/4 right-0 w-1/8 animate-slide-right2 delay-[7000ms] jellyfish-animation"
       alt="Jellyfish"
     />
     <!-- Turtle -->
     <Image
       src={skilpadde}
-      class="skilpadde absolute bottom-0 left-0 w-1/4"
+      class="skilpadde absolute bottom-0 left-0 w-1/4 animate-slide-left2 delay-[7000ms] turtle-animation"
       alt="Turtle"
     />
 
     <!-- Clownfish big -->
     <Image
       src={nemobig}
-      class="nemobig absolute bottom-0 right-1/3 w-1/10"
+      class="nemobig absolute bottom-0 right-1/3 w-1/10 animate-slide-in5 delay-[5000ms]"
       alt="Clownfish"
     />
 
     <!-- Clownfish small-->
     <Image
       src={nemosmall}
-      class="absolute bottom-0 left-96 w-1/10"
+      class="absolute bottom-0 left-96 w-1/10 animate-slide-in4 delay-[9000ms] dolphin-animation"
       alt="Clownfish"
     />
 
     <!-- Manta Ray -->
     <Image
       src={rokke}
-      class="rokke absolute bottom-12 right-16 w-1/4"
+      class="rokke absolute bottom-12 right-16 w-1/4 animate-slide-in3 delay-[9000ms]"
       alt="Manta Ray"
     />
   </div>
@@ -103,5 +117,64 @@ import gulfisk from "../assets/images/gulfisk.webp";
 
   .nemobig {
     bottom: -20%;
+  }
+
+  /* Define slide-in and float animations in one CSS rule */
+  @keyframes slide-in {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float-horizontal {
+    0%,
+    100% {
+      transform: translateX(-20px);
+    }
+    50% {
+      transform: translateX(0px);
+    }
+  }
+
+  /* Apply both animations to the turtle */
+  .turtle-animation {
+    animation:
+      slide-in 5s ease-out forwards,
+      float-horizontal 3s ease-in-out 1s infinite;
+  }
+
+  @keyframes swim-across {
+    0% {
+      transform: translateX(-500px); /* Start off-screen to the left */
+    }
+    50% {
+      transform: translateX(100vw); /* Move off-screen to the right */
+    }
+    100% {
+      transform: translateX(-500px); /* Loop back to the start position */
+    }
+  }
+
+  .dolphin-animation {
+    animation: swim-across 20s linear infinite; /* Adjust duration as desired */
+  }
+
+  @keyframes float-up-down {
+    0%,
+    100% {
+      transform: translateY(0); /* Start and end in the same position */
+    }
+    50% {
+      transform: translateY(-20px); /* Move up 20px */
+    }
+  }
+
+  .jellyfish-animation {
+    animation: float-up-down 4s ease-in-out infinite; /* Adjust duration as needed */
   }
 </style>
