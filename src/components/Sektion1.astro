@@ -1,0 +1,82 @@
+---
+import Header from "../components/Header.astro";
+import { Image } from "astro:assets";
+import hvalhaj from "../assets/images/hvalhaj.webp";
+import delfin from "../assets/images/delfin.webp";
+import søhest from "../assets/images/søhest.webp";
+import vandmand from "../assets/images/vandmand.webp";
+import skilpadde from "../assets/images/skilpadde.webp";
+import nemobig from "../assets/images/nemobig.webp";
+import nemosmall from "../assets/images/nemosmall.webp";
+import rokke from "../assets/images/rokke.webp";
+---
+
+<section class="bg-dark-graphite bg relative w-full h-screen overflow-hidden">
+  <div class="px-4 py-4">
+    <Header />
+  </div>
+  <div class="px-44 py-36">
+    <h1
+      class="text-plastic-red text-h1-d font-primary flex justify-center text-center leading-none"
+    >
+      Sæt en stopper for engangsplast og værn om vores planet
+    </h1>
+    <h2
+      class="flex justify-center text-center text-plastic-red text-h3-d font-primary pt-8 leading-tight"
+    >
+      <em> Hjælp med at holde disse dyr i live; </em>
+    </h2>
+    <h2
+      class="flex justify-center text-center text-plastic-red text-h3-d font-primary leading-tight"
+    >
+      <em> Vi har ikke en fremtid uden dem.</em>
+    </h2>
+  </div>
+  <!-- Whale Shark -->
+  <div class="">
+    <Image src={hvalhaj} alt="Hvalhaj" class="absolute top-10 left-16 w-1/5" />
+    <!-- Dolphin -->
+    <Image src={delfin} class="absolute top-20 right-32 w-1/6" alt="Dolphin" />
+    <!-- Seahorse -->
+    <Image src={søhest} class="absolute top-1/3 left-4 w-1/12" alt="Seahorse" />
+    <!-- Jellyfish -->
+    <Image
+      src={vandmand}
+      class="absolute top-1/4 right-10 w-1/8"
+      alt="Jellyfish"
+    />
+    <!-- Turtle -->
+    <Image
+      src={skilpadde}
+      class="absolute bottom-0 left-0 w-1/4"
+      alt="Turtle"
+    />
+
+    <!-- Clownfish big -->
+    <Image
+      src={nemobig}
+      class="absolute bottom-16 right-1/3 w-1/10"
+      alt="Clownfish"
+    />
+
+    <!-- Clownfish small-->
+    <Image
+      src={nemosmall}
+      class="absolute bottom-16 right-1/3 w-1/10"
+      alt="Clownfish"
+    />
+
+    <!-- Manta Ray -->
+    <Image
+      src={rokke}
+      class="absolute bottom-1/4 right-10 w-1/5"
+      alt="Manta Ray"
+    />
+
+    <style>
+      .bg {
+        background-image: url(/sektion1_bg.webp);
+      }
+    </style>
+  </div>
+</section>
