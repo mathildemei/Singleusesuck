@@ -9,13 +9,16 @@ import skilpadde from "../assets/images/skilpadde.webp";
 import nemobig from "../assets/images/nemobig.webp";
 import nemosmall from "../assets/images/nemosmall.webp";
 import rokke from "../assets/images/rokke.webp";
+import gulfisk from "../assets/images/gulfisk.webp";
 ---
 
-<section class="bg-dark-graphite bg relative w-full h-screen overflow-hidden">
+<section
+  class="bg-dark-graphite bg relative w-full h-screen overflow-hidden pb-96"
+>
   <div class="px-4 py-4">
     <Header />
   </div>
-  <div class="px-44 py-36">
+  <div class="px-44 py-56">
     <h1
       class="text-plastic-red text-h1-d font-primary flex justify-center text-center leading-none"
     >
@@ -34,49 +37,71 @@ import rokke from "../assets/images/rokke.webp";
   </div>
   <!-- Whale Shark -->
   <div class="">
-    <Image src={hvalhaj} alt="Hvalhaj" class="absolute top-10 left-16 w-1/5" />
+    <Image src={hvalhaj} alt="Hvalhaj" class="absolute top-0 left-16 w-1/2" />
     <!-- Dolphin -->
-    <Image src={delfin} class="absolute top-20 right-32 w-1/6" alt="Dolphin" />
+    <Image src={delfin} class="absolute top-8 right-32 w-1/5" alt="Dolphin" />
+    <!-- Yellow fishes -->
+    <Image
+      src={gulfisk}
+      class="gulfisk absolute top-40 w-1/8"
+      alt="Gule fisk"
+    />
     <!-- Seahorse -->
-    <Image src={søhest} class="absolute top-1/3 left-4 w-1/12" alt="Seahorse" />
+    <Image src={søhest} class="absolute top-1/4 left-4 w-1/12" alt="Seahorse" />
     <!-- Jellyfish -->
     <Image
       src={vandmand}
-      class="absolute top-1/4 right-10 w-1/8"
+      class="absolute top-1/4 right-0 w-1/8"
       alt="Jellyfish"
     />
     <!-- Turtle -->
     <Image
       src={skilpadde}
-      class="absolute bottom-0 left-0 w-1/4"
+      class="skilpadde absolute bottom-0 left-0 w-1/4"
       alt="Turtle"
     />
 
     <!-- Clownfish big -->
     <Image
       src={nemobig}
-      class="absolute bottom-16 right-1/3 w-1/10"
+      class="nemobig absolute bottom-0 right-1/3 w-1/10"
       alt="Clownfish"
     />
 
     <!-- Clownfish small-->
     <Image
       src={nemosmall}
-      class="absolute bottom-16 right-1/3 w-1/10"
+      class="absolute bottom-0 left-96 w-1/10"
       alt="Clownfish"
     />
 
     <!-- Manta Ray -->
     <Image
       src={rokke}
-      class="absolute bottom-1/4 right-10 w-1/5"
+      class="rokke absolute bottom-12 right-16 w-1/4"
       alt="Manta Ray"
     />
-
-    <style>
-      .bg {
-        background-image: url(/sektion1_bg.webp);
-      }
-    </style>
   </div>
 </section>
+
+<style>
+  .bg {
+    background-image: url(/sektion1_bg.webp);
+  }
+
+  .rokke {
+    bottom: -0%;
+  }
+
+  .skilpadde {
+    bottom: -30%;
+  }
+
+  .gulfisk {
+    right: 35%;
+  }
+
+  .nemobig {
+    bottom: -20%;
+  }
+</style>
