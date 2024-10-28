@@ -1,24 +1,38 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button2 from "../components/Button_green.astro";
+import Header from "../components/Header.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 ---
 
-<MainLayout title="#SingleUseSucks">
-  <article class="font-primary place-content-center">
-    <h1 class="text-plastic-red text-h1-d font-primary place-content-center">
-      Dyk ned og opdag, hvorfor engangsplastik har alvorlige konsekvenser, både
-      for dig og for naturen
-    </h1>
-    <h3 class="text-h3-d font-secondary text-plastic-red">#SingleUseSucks</h3>
-    <div class="text-body-b font-secondary">
-      <Button2 class="flex items-center">
-        <div class="flex pr-8 pl-6 py-3 font-body-b">
-          <p class="pl-2">Start her</p>
-        </div>
-      </Button2>
+<MainLayout>
+  <section class="bg-dark-graphite">
+    <div class="px-2 py-2">
+      <Header />
     </div>
-  </article>
+    <article class="font-primary text-center">
+      <h1 class="text-plastic-red text-7xl font-primary p-6 leading-snug pt-12">
+        Dyk ned og opdag, hvorfor<br />engangsplastik har alvorlige<br />
+         konsekvenser, både for<br /> dig og for naturen
+      </h1>
+      <div class="inline-flex justify-center items-center pb-3 pt-3">
+        <h3 class="text-h3-d text-plastic-red m-0 p-0 pb-1">#</h3>
+        <h3 class="text-h3-d font-secondary text-plastic-red m-0 p-0 p-6">
+          SingleUseSucks
+        </h3>
+      </div>
+      <div class="text-body-b font-secondary p-6 pb-16 animate-pulse">
+        <a href="/scrollytelling" class="cursor-pointer">
+          <!-- Adjusted here -->
+          <Button2 class="flex items-center p-16">
+            <div class="flex pr-8 pl-6 py-3 font-body-b">
+              <p class="pl-2">Start her</p>
+            </div>
+          </Button2>
+        </a>
+      </div>
+    </article>
+  </section>
 </MainLayout>
