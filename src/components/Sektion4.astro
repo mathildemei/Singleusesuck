@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import data_text from "../assets/images/data_text.png";
+import Data from "../assets/images/datavisualisering.webp";
+---
+
+<style>
+  .bg {
+    background-image: url(../papir_baggrund.webp);
+    background-size: 150%; /* Adjust the size to create a zoomed-in effect */
+    background-position: center; /* Center the image */
+    height: 208vh; /* Set to full viewport height or adjust as necessary */
+    margin-top: -10rem;
+  }
+</style>
+
+<section class="bg px-16 relative">
+  <h2
+    class="text-gr text-h1-d font-primary flex justify-center text-center mb-6 italic relative pt-96"
+  >
+    Hvordan bliver plastik brugt?
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Image Column -->
+    <div class="flex justify-center pl-16">
+      <Image
+        src={Data}
+        alt="Plastik brugt i forskellige applikationer"
+        class="max-w-full h-auto"
+      />
+    </div>
+
+    <!-- List Column -->
+    <div>
+      <Image src={data_text} class="pt-40 pl-16" alt="Data" />
+    </div>
+  </div>
+</section>
