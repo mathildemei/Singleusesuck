@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets";
+import vandkant from "../assets/images/vandkant.webp";
+import polaroid from "../assets/images/polaroid.webp";
+import txt from "../assets/images/txt.webp";
+import postkort from "../assets/images/postkort.webp";
+import lasttxt from "../assets/images/lasttxt.webp";
+---
+
+<div class="overflow-clip">
+  <section id="horisontalscrollsection" class="h-[500vw] bg-[#E9E2DC] pt-0">
+    <ul id="horisontalliste" class="list-none pl-0 flex sticky top-[10vh]">
+      <li
+        class="pl-80 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+      >
+        <figure class="flex flex-row max-w-[800px]">
+          <Image src={vandkant} class="w-120%" alt="foto" />
+        </figure>
+      </li>
+      <li
+        class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+      >
+        <figure class="flex flex-row max-w-[800px]">
+          <Image src={polaroid} class="w-100%" alt="foto" />
+        </figure>
+      </li>
+      <li
+        class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+      >
+        <figure class="flex flex-row max-w-[800px]">
+          <Image src={txt} class="w-100%" alt="foto" />
+        </figure>
+      </li>
+      <li
+        class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto"
+      >
+        <figure class="flex flex-row max-w-[800px]">
+          <Image src={postkort} class="w-3/4" alt="foto" />
+        </figure>
+      </li>
+      <li
+        class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto mr-40"
+      >
+        <figure class="flex flex-row max-w-[800px]">
+          <Image src={lasttxt} class="w-100%" alt="foto" />
+        </figure>
+      </li>
+    </ul>
+  </section>
+</div>
+
+<script>
+  /* Horisontal scroll sektion */
+  import { animate, scroll } from "motion";
+  scroll(
+    animate("#horisontalliste", {
+      transform: ["none", "translateX(-500vw)"],
+    }),
+    { target: document.querySelector("#horisontalscrollsection") }
+  );
+</script>
