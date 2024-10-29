@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import isberg1 from "../assets/images/isberg1.webp";
+import isberg2 from "../assets/images/isberg2.webp";
+import isberg3 from "../assets/images/isberg3.webp";
+---
+
+<section class="bg bg-cover bg-center h-[110rem] relative">
+  <Image
+    src={isberg1}
+    class="isberg1 absolute parallaxgrafik1"
+    alt="isberg i baggrunden"
+  />
+  <Image src={isberg2} class="isberg2 absolute" alt="isberg i baggrunden" />
+  <Image src={isberg3} class="isberg3 absolute" alt="isberg i baggrunden" />
+</section>
+
+<style>
+  .bg {
+    background-image: url(/sektion9_bg.webp);
+  }
+
+  .isberg1 {
+    padding-top: 26rem;
+  }
+  .isberg2 {
+    right: 0%;
+    padding-top: 32rem;
+  }
+
+  .isberg3 {
+    padding-top: 44rem;
+  }
+</style>
+
+<!-- <script>
+  import { animate, scroll } from "motion";
+
+  /* Parallax effect for the image */
+  console.log("Parallax initialized");
+
+  scroll(animate(".parallaxgrafik1", { y: [600, -200] }), {
+    target: document.querySelector(".parallaxgrafik1"),
+    offset: ["start end", "end start"],
+  });
+</script> -->
