@@ -1,11 +1,41 @@
 ---
 import { Image } from "astro:assets";
+import blåfisk from "../assets/images/blåfisk.webp";
 ---
 
-<section class="bg">Hej</section>
+<section
+  class="bg-dark-graphite pb-96 bg bg-cover bg-center relative overflow-hidden height-auto"
+>
+  <div class="px-44 py-56">
+    <h1
+      class="text-white text-h2-d font-primary flex justify-center text-center leading-tight"
+    >
+      Plastikforurening er ophobningen af plastik i miljøet. Engangsplast er det
+      vi producerer mest af af alt plastik på verdensplan, og det ender ofte i
+      vores have og forstyrrer dyr og planter.
+    </h1>
+  </div>
+  <div class="parallaxelement">
+    <Image
+      src={blåfisk}
+      alt="blå plastik fisk"
+      class="absolute left-96 w-1/8"
+    />
+  </div>
+  <div></div>
+</section>
 
 <style>
   .bg {
     background-image: url(/sektion2.webp);
   }
 </style>
+<script>
+  /* Import af Motion One biblioteket */
+  import { animate, scroll } from "motion";
+
+  /* Parallax med tekstboks */
+  scroll(animate(".parallaxelement", { x: [50, 500] }), {
+    target: document.querySelector(".parallaxelement"),
+  });
+</script>
