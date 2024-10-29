@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import dykker from "../assets/images/dykker.svg";
+import grønflaske from "../assets/images/grønflaske.webp";
+import pinkpose from "../assets/images/pinkpose.webp";
+import blåflaske from "../assets/images/blåflaske.webp";
+import gråflaske from "../assets/images/gråflaske.webp";
+---
+
+<section class="h-screen w-full relative">
+  <article class="relative h-full w-full cursor-pointer">
+    <Image
+      src={dykker}
+      class="absolute pointer-events-none transition-transform duration-200 transform"
+      id="followImage"
+      alt="Dykker"
+    />
+
+    <!-- Floating objects -->
+    <Image
+      src={grønflaske}
+      class="absolute"
+      id="object1"
+      style="top: 10%; left: 10%; width: 10%"
+      alt="Grønflaske"
+    />
+    <Image
+      src={pinkpose}
+      class="absolute"
+      id="object2"
+      style="top: 70%; right: 0%; width: 10%"
+      alt="Pinkpose"
+    />
+    <Image
+      src={blåflaske}
+      class="absolute"
+      id="object3"
+      style="bottom: 12%; left: 16%; width: 14%"
+      alt="Blåflaske"
+    />
+    <Image
+      src={gråflaske}
+      class="absolute"
+      id="object4"
+      style="top: 15%; right: 8%;"
+      alt="Gråflaske"
+    />
+
+    <video
+      class="h-full w-full object-cover"
+      width="1280"
+      height="960"
+      autoplay
+      muted
+      loop
+    >
+      <source src="/sektion6.mov" type="video/mp4" />
+    </video>
+  </article>
+</section>
+
+<script>
+  const followImage = document.getElementById("followImage");
+  const objects = [
+    document.getElementById("object1"),
+    document.getElementById("object2"),
+    document.getElementById("object3"),
+    document.getElementById("object4"),
+  ];
+
+  // Helper function to reset objects' visibility
+  function resetObjects() {
+    objects.forEach((obj) => {
+      if (obj) {
+        obj.style.display = "block"; // Show objects again
+      }
+    });
+  }
+
+  document.addEventListener("mousemove", (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+    followImage.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+
+    // Check for collision with each object
+    objects.forEach((obj) => {
+      if (obj && obj.style.display !== "none") {
+        const objRect = obj.getBoundingClientRect();
+        const diverRect = followImage.getBoundingClientRect();
+
+        if (
+          diverRect.left < objRect.right &&
+          diverRect.right > objRect.left &&
+          diverRect.top < objRect.bottom &&
+          diverRect.bottom > objRect.top
+        ) {
+          // Collision detected, hide the object
+          obj.style.display = "none";
+
+          // Set a timer to make the object reappear after 3 seconds
+          setTimeout(() => {
+            obj.style.display = "block";
+          }, 3000); // Adjust time as desired
+        }
+      }
+    });
+  });
+</script>
