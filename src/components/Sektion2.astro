@@ -1,6 +1,17 @@
 ---
 import { Image } from "astro:assets";
 import blåfisk from "../assets/images/blåfisk.webp";
+import rødpose from "../assets/images/rødpose.webp";
+import blåflaske from "../assets/images/blåflaske.webp";
+import pinkpose from "../assets/images/pinkpose.webp";
+import blåpose1 from "../assets/images/blåpose1.webp";
+import blåpose2 from "../assets/images/blåpose2.webp";
+import grønflaske from "../assets/images/grønflaske.webp";
+import blåpose3 from "../assets/images/blåpose3.webp";
+import stribetpose from "../assets/images/stribetpose.webp";
+import skilpadde2 from "../assets/images/skildepadde2.webp";
+import grønpose from "../assets/images/grønpose.webp";
+import storpose from "../assets/images/storpose.webp";
 ---
 
 <section
@@ -16,18 +27,140 @@ import blåfisk from "../assets/images/blåfisk.webp";
     </h1>
   </div>
   <div class="parallaxelement">
+    <Image src={blåfisk} alt="blå plastik fisk" class="absolute w-1/8" />
+  </div>
+
+  <!-- Floating Elements -->
+  <div class="h-[120rem] parallaxgrafik fullwidthsection">
+    <!-- rødpose -->
+    <Image src={rødpose} class="rødpose absolute w-1/3" alt="rødpose" />
+
+    <!-- blå falske 1 -->
     <Image
-      src={blåfisk}
-      alt="blå plastik fisk"
-      class="absolute left-96 w-1/8"
+      src={blåflaske}
+      class="rødpose absolute w-1/3 left-32"
+      alt="blåflaske"
+    />
+
+    <!-- pinkpose-->
+    <Image
+      src={pinkpose}
+      class="rødpose absolute w-1/3 right-0 top-12"
+      alt="pinkpose"
+    />
+
+    <!-- blåpose 1-->
+    <Image
+      src={blåpose1}
+      class="blåpose absolute w-1/3 right-32"
+      alt="blåpose1"
+    />
+
+    <!-- blåpose 2-->
+    <Image
+      src={blåpose2}
+      class="blåpose2 absolute w-1/2 right-0"
+      alt="blåpose2"
+    />
+
+    <!-- grønflaske 1-->
+    <Image
+      src={grønflaske}
+      class="grønflaske absolute w-1/3"
+      alt="grønflaske"
+    />
+
+    <!-- blåpose 3-->
+    <Image src={blåpose3} class="blåpose3 absolute w-1/3" alt="blåpose3" />
+
+    <!-- stribet pose-->
+    <Image
+      src={stribetpose}
+      class="stribetpose absolute w-1/3"
+      alt="stribetpose"
+    />
+
+    <!-- skildpadde-->
+    <Image src={skilpadde2} class="skilpadde absolute w-1/2" alt="skilpadde" />
+
+    <!-- grønflaske 2-->
+    <Image
+      src={grønflaske}
+      class="grønflaske2 absolute w-1/3"
+      alt="grønflaske"
+    />
+
+    <!-- blå falske 2 -->
+    <Image src={blåflaske} class="blåflaske absolute w-1/3" alt="blåflaske2" />
+
+    <!-- grønpose 2-->
+    <Image
+      src={grønpose}
+      class="grønpose absolute w-1/3 right-0"
+      alt="grønpose"
+    />
+
+    <!-- big bag-->
+    <Image
+      src={storpose}
+      class="grønpose storpose absolute right-0 parallaxgrafik1"
+      alt="storpose"
     />
   </div>
-  <div></div>
 </section>
 
 <style>
   .bg {
     background-image: url(/sektion2.webp);
+  }
+
+  .rødpose {
+    top: 50%;
+  }
+
+  .blåpose {
+    top: 46%;
+  }
+
+  .blåpose2 {
+    top: 62%;
+  }
+  .blåpose3 {
+    top: 64%;
+  }
+
+  .grønflaske {
+    right: -20%;
+    top: 70%;
+  }
+
+  .grønflaske2 {
+    top: 64%;
+  }
+
+  .stribetpose {
+    top: 60%;
+    left: 20%;
+  }
+
+  .skilpadde {
+    top: 54%;
+    left: 16%;
+  }
+
+  .grønpose {
+    top: 74%;
+    right: 16%;
+  }
+
+  .blåflaske {
+    top: 84%;
+    right: -10%;
+  }
+
+  .storpose {
+    width: 80%;
+    left: 15%;
   }
 </style>
 <script>
@@ -35,7 +168,13 @@ import blåfisk from "../assets/images/blåfisk.webp";
   import { animate, scroll } from "motion";
 
   /* Parallax med tekstboks */
-  scroll(animate(".parallaxelement", { x: [50, 500] }), {
+  scroll(animate(".parallaxelement", { x: [1400] }), {
     target: document.querySelector(".parallaxelement"),
+  });
+
+  /* Parallaxgrafik */
+  scroll(animate(".parallaxgrafik1", { y: [800, -300] }), {
+    target: document.querySelector(".parallaxgrafik"),
+    offset: ["start end", "end start"],
   });
 </script>
