@@ -6,19 +6,12 @@ import Link from "../components/Link.astro";
 ---
 
 <section class="bg-dark-graphite flex flex-col">
-  <!-- Gradient Image Overlay 
-  <Image
-    src={gradient}
-    class="absolute inset-0 w-full h-full object-cover opacity-60 z-10"
-    alt="gradient"
-  />-->
-
   <div class="relative z-20 pt-24">
     <h1
       class="text-white text-h2-d font-primary mb-6 italic pt-24 pb-16 text-5xl pl-6"
     >
       3 ting du kan gøre <br />
-       for en plastikfri fremtid
+      for en plastikfri fremtid
     </h1>
 
     <!-- Use a flex container to align the image to the right -->
@@ -31,13 +24,75 @@ import Link from "../components/Link.astro";
     </div>
   </div>
 
-  <div class="flex flex-col items-center justify-center h-screen text-center pb-96">
+  <div
+    class="flex flex-col items-center justify-center h-screen text-center pb-96"
+  >
     <h1
-      class="text-plastic-red font-primary italic pt-96 pb-12 text-8xl animate-bounce"
+      class="text-plastic-red font-primary italic pt-96 pb-12 text-6xl md:text-7xl lg:text-8xl px-36"
     >
-      Målet om at udfase <br />engangsplastik og skabe<br /> bedre
-      genbrugsløsninger er <br />en del af alt vi laver
-    </h1><h3 class="text-plastic-red font-primary text-3xl">Køb vores <Link>merchandise</Link> og vær med i kampen imod plastik</h3>
-
+      <span class="reveal">Målet</span>
+      <span class="reveal">om</span>
+      <span class="reveal">at</span>
+      <span class="reveal">udfase</span>
+      <span class="reveal">engangsplastik</span>
+      <span class="reveal">og</span>
+      <span class="reveal">skabe</span>
+      <span class="reveal">bedre</span>
+      <span class="reveal">genbrugsløsninger</span>
+      <span class="reveal">er</span>
+      <span class="reveal">en</span>
+      <span class="reveal">del</span>
+      <span class="reveal">af</span>
+      <span class="reveal">alt</span>
+      <span class="reveal">vi</span>
+      <span class="reveal">laver</span>
+    </h1>
+    <h3 class="text-plastic-red font-primary text-3xl">
+      Køb vores <a
+        href="https://www.hjemhavn.dk/collections/plastic-change-merchandise"
+        class="underline"
+        target="_blank"
+        rel="noopener noreferrer">merchandise</a
+      > og vær med i kampen imod plastik
+    </h3>
   </div>
 </section>
+
+<script>
+  // Function to reveal words on scroll
+  const reveals = document.querySelectorAll(".reveal");
+
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach((span, index) => {
+      const rect = span.getBoundingClientRect();
+      if (rect.top < windowHeight) {
+        // Adding a delay for each word's appearance based on its index
+        setTimeout(() => {
+          span.classList.add("revealed");
+        }, index * 300); // Adjust this value (500ms) to control the delay for each word
+      } else {
+        span.classList.remove("revealed");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  window.addEventListener("load", revealOnScroll); // To trigger the effect on page load
+</script>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px); /* Move down */
+    transition:
+      opacity 2s ease,
+      transform 0.6s ease;
+  }
+
+  .revealed {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+  }
+</style>

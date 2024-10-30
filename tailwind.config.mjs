@@ -27,6 +27,7 @@ export default {
                 "dark-graphite": "#1C1E23",
                 "plastic-red": "#FF1054",
                 "green": "#007C79",
+                "beige": "#E9E2DC",
               },
             },
             keyframes: {
