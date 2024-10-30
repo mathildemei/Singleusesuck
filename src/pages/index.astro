@@ -18,11 +18,13 @@ import { Image } from "astro:assets";
       </h1>
       <div class="inline-flex justify-center items-center pb-3 pt-3">
         <h3 class="text-h3-d text-plastic-red m-0 p-0 pb-1">#</h3>
-        <h3 class="text-h3-d font-secondary text-plastic-red m-0 p-0 p-6">
+        <h3
+          class="text-h3-d font-secondary text-plastic-red m-0 p-0 pr-6 pt-6 pb-6"
+        >
           SingleUseSucks
         </h3>
       </div>
-      <div class="text-body-b font-secondary p-6 pb-16 animate-pulse">
+      <div class="text-body-b font-secondary p-6 pb-16 pulse-animation">
         <a href="/scrollytelling" class="cursor-pointer">
           <!-- Adjusted here -->
           <Button2 class="flex items-center p-16">
@@ -35,3 +37,21 @@ import { Image } from "astro:assets";
     </article>
   </section>
 </MainLayout>
+
+<style>
+  <style > @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .pulse-animation {
+    animation: pulse 1s infinite; /* Adjust the duration and repeat type as needed */
+  }
+</style>
