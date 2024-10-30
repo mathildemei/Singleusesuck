@@ -5,26 +5,32 @@ import Button from "../components/Button.astro";
 ---
 
 <section
-  class="flex flex-row justify-between items-center m-2 font-secondary bg font-body-b"
+  class="flex flex-row justify-between items-center font-secondary bg font-body-b"
 >
   <!-- Logo aligned to the start -->
-  <div>
-    <Image src={logo} alt="plastic change logo" class="my-0 w-36" />
-  </div>
+  <a href="/">
+    <Image src={logo} alt="plastic change logo" class="my-0 w-36 pl-2" />
+  </a>
 
   <!-- Button aligned to the end -->
-  <div
-    class="flex items-center rounded-full border-solid border-2 border-plastic-red pl-8 pr-1.5 py-1.5"
-  >
-    <div>
-      <p class="text-white pr-32 font-body-b">Skriv din email</p>
-    </div>
-    <Button>
-      <div class="flex px-6 py-3 font-body-b">
-        <p class="">Tilmeld dig nyhedsbrev</p>
+  <article class="pr-2 pb-2">
+    <div
+      class="flex items-center rounded-full border-solid border-2 border-plastic-red pl-4 pr-1.5 py-1"
+    >
+      <div>
+        <input
+          type="text"
+          placeholder="Skriv din email"
+          class="pr-12 font-body-b bg-transparent border-transparent text-white placeholder-white"
+        />
       </div>
-    </Button>
-  </div>
+      <Button>
+        <div class="flex px-6 py-3 font-body-b">
+          <p class="">Tilmeld dig nyhedsbrev</p>
+        </div>
+      </Button>
+    </div>
+  </article>
 </section>
 
 <style>
