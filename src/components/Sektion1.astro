@@ -10,6 +10,7 @@ import nemobig from "../assets/images/nemobig.webp";
 import nemosmall from "../assets/images/nemosmall.webp";
 import rokke from "../assets/images/rokke.webp";
 import gulfisk from "../assets/images/gulfisk.webp";
+import blur from "../assets/images/blur.webp";
 ---
 
 <section
@@ -96,6 +97,9 @@ import gulfisk from "../assets/images/gulfisk.webp";
       alt="Manta Ray"
     />
   </div>
+  <div>
+    <Image src={blur} class="absolute blur" alt="overgang" />
+  </div>
 </section>
 
 <style>
@@ -117,6 +121,11 @@ import gulfisk from "../assets/images/gulfisk.webp";
 
   .nemobig {
     bottom: -16%;
+  }
+
+  .blur {
+    z-index: 20;
+    bottom: -22%;
   }
 
   /* Define slide-in and float animations in one CSS rule */

@@ -12,11 +12,15 @@ import stribetpose from "../assets/images/stribetpose.webp";
 import skilpadde2 from "../assets/images/skildepadde2.webp";
 import grønpose from "../assets/images/grønpose.webp";
 import storpose from "../assets/images/storpose.webp";
+import blur from "../assets/images/blur.webp";
 ---
 
 <section
   class="bg-dark-graphite pb-96 bg bg-cover bg-center relative overflow-hidden height-auto"
 >
+  <div>
+    <Image src={blur} class="absolute blur" alt="overgang" />
+  </div>
   <div class="px-44 py-56 fade-animation fade-in-section">
     <h1
       class="text-white text-h2-d font-primary flex justify-center text-center leading-tight"
@@ -172,6 +176,11 @@ import storpose from "../assets/images/storpose.webp";
   .storpose {
     width: 80%;
     left: 15%;
+  }
+
+  .blur {
+    z-index: 20;
+    top: -5%;
   }
 
   @keyframes fade-in-out {
