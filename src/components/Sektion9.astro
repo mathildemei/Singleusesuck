@@ -5,14 +5,22 @@ import isberg2 from "../assets/images/isberg2.webp";
 import isberg3 from "../assets/images/isberg3.webp";
 ---
 
-<section class="bg bg-cover bg-center h-[110rem] relative">
+<section class="bg bg-cover bg-center h-[110rem] relative overflow-hidden">
   <Image
     src={isberg1}
-    class="isberg1 absolute parallaxgrafik1"
+    class="isberg1 absolute parallax-item parallax-up"
     alt="isberg i baggrunden"
   />
-  <Image src={isberg2} class="isberg2 absolute" alt="isberg i baggrunden" />
-  <Image src={isberg3} class="isberg3 absolute" alt="isberg i baggrunden" />
+  <Image
+    src={isberg2}
+    class="isberg2 absolute parallax-item parallax-left"
+    alt="isberg i baggrunden"
+  />
+  <Image
+    src={isberg3}
+    class="isberg3 absolute parallax-item parallax-right"
+    alt="isberg i baggrunden"
+  />
 </section>
 
 <style>
@@ -21,26 +29,37 @@ import isberg3 from "../assets/images/isberg3.webp";
   }
 
   .isberg1 {
-    padding-top: 26rem;
+    top: 26rem;
+    transform: translateX(20%);
   }
   .isberg2 {
-    right: 0%;
-    padding-top: 32rem;
+    top: 32rem;
+    left: -10%; /* Start offscreen to the left */
   }
-
   .isberg3 {
-    padding-top: 44rem;
+    top: 44rem;
+    right: -10%; /* Start offscreen to the right */
   }
 </style>
 
 <script>
   import { animate, scroll } from "motion";
 
-  /* Parallax effect for the image */
-  console.log("Parallax initialized");
+  /* Parallax effect for the iceberg moving upward */
+  scroll(animate(".parallax-up", { y: [-100, -500] }), {
+    target: document.querySelector(".parallax-up"),
+    offset: ["start end", "end start"],
+  });
 
-  scroll(animate(".parallaxgrafik1", { y: [600, -200] }), {
-    target: document.querySelector(".parallaxgrafik1"),
+  /* Parallax effect for iceberg 2 moving from left to center */
+  scroll(animate(".parallax-left", { x: ["-80%", "50%"] }), {
+    target: document.querySelector(".parallax-left"),
+    offset: ["start end", "end start"],
+  });
+
+  /* Parallax effect for iceberg 3 moving from right to center */
+  scroll(animate(".parallax-right", { x: ["80%", "-50%"] }), {
+    target: document.querySelector(".parallax-right"),
     offset: ["start end", "end start"],
   });
 </script>
