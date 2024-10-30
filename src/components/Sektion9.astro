@@ -3,44 +3,82 @@ import { Image } from "astro:assets";
 import isberg1 from "../assets/images/isberg1.webp";
 import isberg2 from "../assets/images/isberg2.webp";
 import isberg3 from "../assets/images/isberg3.webp";
+import Formular from "../components/Formular.astro";
 ---
 
-<section class="bg bg-cover bg-center h-[110rem] relative">
+<section class="bg bg-cover bg-center h-[98rem] relative overflow-hidden">
   <Image
     src={isberg1}
-    class="isberg1 absolute parallaxgrafik1"
+    class="isberg1 absolute parallax-item parallax-up"
     alt="isberg i baggrunden"
   />
-  <Image src={isberg2} class="isberg2 absolute" alt="isberg i baggrunden" />
-  <Image src={isberg3} class="isberg3 absolute" alt="isberg i baggrunden" />
+  <Image
+    src={isberg2}
+    class="isberg2 absolute parallax-item parallax-left"
+    alt="isberg i baggrunden"
+  />
+  <Image
+    src={isberg3}
+    class="isberg3 absolute parallax-item parallax-right"
+    alt="isberg i baggrunden"
+  />
+  <!-- Donation Form Section -->
+  <article
+    class="absolute form parallax-item parallax-up-form flex justify-center"
+  >
+    <Formular />
+  </article>s
 </section>
 
 <style>
   .bg {
-    background-image: url(/sektion9_bg.webp);
+    background-image: url(/bgsektion9.png);
   }
 
   .isberg1 {
-    padding-top: 26rem;
+    top: 26rem;
+    transform: translateX(20%);
   }
   .isberg2 {
-    right: 0%;
-    padding-top: 32rem;
+    top: 32rem;
+    left: -10%; /* Start offscreen to the left */
+  }
+  .isberg3 {
+    top: 44rem;
+    right: 0%; /* Start offscreen to the right */
   }
 
-  .isberg3 {
-    padding-top: 44rem;
+  .form {
+    z-index: 20; /* Ensure the form stays on top */
+    left: 30%;
+    bottom: -45%;
   }
 </style>
 
-<!-- <script>
+<script>
   import { animate, scroll } from "motion";
 
-  /* Parallax effect for the image */
-  console.log("Parallax initialized");
-
-  scroll(animate(".parallaxgrafik1", { y: [600, -200] }), {
-    target: document.querySelector(".parallaxgrafik1"),
+  /* Parallax effect for the iceberg moving upward */
+  scroll(animate(".parallax-up", { y: [-100, -500] }), {
+    target: document.querySelector(".parallax-up"),
     offset: ["start end", "end start"],
   });
-</script> -->
+
+  /* Parallax effect for iceberg 2 moving from left to center */
+  scroll(animate(".parallax-left", { x: ["-80%", "50%"] }), {
+    target: document.querySelector(".parallax-left"),
+    offset: ["start end", "end start"],
+  });
+
+  /* Parallax effect for iceberg 3 moving from right to center */
+  scroll(animate(".parallax-right", { x: ["80%", "-50%"] }), {
+    target: document.querySelector(".parallax-right"),
+    offset: ["start end", "end start"],
+  });
+
+  /* Parallax effect for the form moving upward */
+  scroll(animate(".parallax-up-form", { y: [-700, -600] }), {
+    target: document.querySelector(".parallax-up-form"),
+    offset: ["start end", "end start"],
+  });
+</script>
