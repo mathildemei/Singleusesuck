@@ -4,7 +4,7 @@ import Button from "../components/Button.astro";
 ---
 
 <section class="bg bg-cover bg-center flex justify-center items-center p-6">
-  <div class="relative max-w-md w-full p-10 text-center">
+  <div class="relative h-full w-full p-32 text-center">
     <!-- Heading -->
     <h3 class="text-h3-d text-plastic-red font-secondary font-semibold mb-6">
       Støt os nu
@@ -68,7 +68,8 @@ import Button from "../components/Button.astro";
 <style>
   .bg {
     background-image: url(/formular.webp); /* Torn paper with polar bear */
-    background-size: cover;
-    background-position: center;
+    background-position: top center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 </style>

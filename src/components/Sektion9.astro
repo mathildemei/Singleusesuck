@@ -22,9 +22,12 @@ import Formular from "../components/Formular.astro";
     class="isberg3 absolute parallax-item parallax-right"
     alt="isberg i baggrunden"
   />
-</section>
-<section class="absolute">
-  <Formular />
+  <!-- Donation Form Section -->
+  <article
+    class="absolute form parallax-item parallax-up-form flex justify-center"
+  >
+    <Formular />
+  </article>s
 </section>
 
 <style>
@@ -43,6 +46,12 @@ import Formular from "../components/Formular.astro";
   .isberg3 {
     top: 44rem;
     right: -10%; /* Start offscreen to the right */
+  }
+
+  .form {
+    z-index: 20; /* Ensure the form stays on top */
+    left: 30%;
+    bottom: -10%;
   }
 </style>
 
@@ -64,6 +73,12 @@ import Formular from "../components/Formular.astro";
   /* Parallax effect for iceberg 3 moving from right to center */
   scroll(animate(".parallax-right", { x: ["80%", "-50%"] }), {
     target: document.querySelector(".parallax-right"),
+    offset: ["start end", "end start"],
+  });
+
+  /* Parallax effect for the form moving upward */
+  scroll(animate(".parallax-up-form", { y: [-500, -300] }), {
+    target: document.querySelector(".parallax-up-form"),
     offset: ["start end", "end start"],
   });
 </script>
