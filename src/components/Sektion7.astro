@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import noter from "../assets/images/noter.webp";
+import gradient from "../assets/images/gradient67.webp";
+import Link from "../components/Link.astro";
+---
+
+<section class="bg-dark-graphite flex flex-col">
+  <!-- Gradient Image Overlay 
+  <Image
+    src={gradient}
+    class="absolute inset-0 w-full h-full object-cover opacity-60 z-10"
+    alt="gradient"
+  />-->
+
+  <div class="relative z-20 pt-24">
+    <h1
+      class="text-white text-h2-d font-primary mb-6 italic pt-24 pb-16 text-5xl pl-6"
+    >
+      3 ting du kan gøre <br />
+       for en plastikfri fremtid
+    </h1>
+
+    <!-- Use a flex container to align the image to the right -->
+    <div class="flex justify-end pb-56">
+      <Image
+        src={noter}
+        class="w-[60%] max-h-screen object-cover"
+        alt="noter"
+      />
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center justify-center h-screen text-center pb-96">
+    <h1
+      class="text-plastic-red font-primary italic pt-96 pb-12 text-8xl animate-bounce"
+    >
+      Målet om at udfase <br />engangsplastik og skabe<br /> bedre
+      genbrugsløsninger er <br />en del af alt vi laver
+    </h1><h3 class="text-plastic-red font-primary text-3xl">Køb vores <Link>merchandise</Link> og vær med i kampen imod plastik</h3>
+
+  </div>
+</section>
