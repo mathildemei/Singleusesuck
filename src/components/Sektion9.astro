@@ -5,12 +5,16 @@ import isberg2 from "../assets/images/isberg2.webp";
 import isberg3 from "../assets/images/isberg3.webp";
 import Formular from "../components/Formular.astro";
 import Footer from "../components/Footer.astro";
+import blur4 from "../assets/images/blur4.webp";
 ---
 
 <section
   class="bg bg-cover bg-center h-[98rem] relative overflow-hidden"
   id="sektion9"
 >
+  <div>
+    <Image src={blur4} class="absolute blur" alt="overgang" />
+  </div>
   <Image
     src={isberg1}
     class="isberg1 absolute parallax-item parallax-up"
@@ -64,6 +68,11 @@ import Footer from "../components/Footer.astro";
   .footer {
     bottom: 0rem;
     z-index: 20;
+  }
+
+  .blur {
+    z-index: 20;
+    top: -6%;
   }
 </style>
 
