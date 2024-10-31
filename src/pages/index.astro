@@ -4,9 +4,26 @@ import Button2 from "../components/Button_green.astro";
 import Header from "../components/Header.astro";
 import Link from "../components/Link.astro";
 import { Image } from "astro:assets";
+import { Schema } from "astro/zod";
+
+const schemamarkup = {
+ "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Plastic Change",
+  "alternateName": "#SingleUseSucks",
+  "url": "https://plasticchange.dk/",
+  "logo": "https://plasticchange.dk/press-view/vores-logopakke-til-web-og-tryksager/"
+
+  },
+
 ---
 
-<MainLayout>
+<MainLayout
+  title="#SingleUseSucks"
+  description="Startside til scrollytelling"
+  ogtitle="Start din rejse her, og mindsk forurening af miljøet med platisk"
+  ogdescription="Scrollytelling til at øge konverteringer til donationer og tilmelding af nyhedsbreve"
+>
   <section class="bg-dark-graphite">
     <div class="px-2 py-2">
       <Header />
@@ -55,3 +72,5 @@ import { Image } from "astro:assets";
     animation: pulse 1s infinite; /* Adjust the duration and repeat type as needed */
   }
 </style>
+
+<script type="application/ld+json" set:html={JSON.stringify(schemamarkup)} />
